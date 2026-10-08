@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ótica Cristalino - Eficiência e Qualidade em Marechal Deodoro</title>
+    <title>Óptica Cristalinos</title>
     <meta name="description" content="Óculos de grau e sol das melhores marcas, alianças em ouro e prata, relógios de grife e transporte gratuito para exame de vista em Maceió.">
     
     <!-- FAVICON (Ícone da aba do navegador) -->
-    <link rel="icon" href="assets/Logo Ótica Cristalino em Azul Vibrante.png" type="image/png">
+    <link rel="icon" href="assets/Logo Óptica Cristalinos em Azul Vibrante.png" type="image/png">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- FontAwesome Font Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SweetAlert2 CSS e JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <script>
         tailwind.config = {
@@ -39,7 +42,7 @@
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-brand-light antialiased selection:bg-brand-gold selection:text-brand-blue">
-
+    
     <!-- CABEÇALHO / NAVBAR -->
     <header class="fixed w-full bg-brand-vibrant/95 backdrop-blur-md shadow-lg z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +51,7 @@
                 <!-- LOGO -->
                 <div class="flex-shrink-0 flex items-center py-2">
                     <a href="#" class="flex items-center gap-2 group">
-                        <img src="assets/Logo Ótica Cristalino em Azul Vibrante com fundo transparente.png" alt="Logo Ótica Cristalino" class="h-20 w-auto object-contain transition-transform group-hover:scale-105">
+                        <img src="assets/Logo Óptica Cristalinos em Azul Vibrante com fundo transparente.png" alt="Logo Ótica Cristalino" class="h-20 w-auto object-contain transition-transform group-hover:scale-105">
                     </a>
                 </div>
 
@@ -198,7 +201,7 @@
                             <div class="bg-brand-gold text-brand-blue w-12 h-12 rounded-xl font-black flex items-center justify-center flex-shrink-0 text-xl">2</div>
                             <div>
                                 <h4 class="font-bold text-white text-lg">Transporte Ida/Volta ou Domicílio</h4>
-                                <p class="text-blue-100 text-sm mt-1.5 leading-relaxed">Nosso veículo busca você em Marechal e leva para Maceió. Preferiu não sair de casa? <strong>Nós levamos nosso mostruário até o seu domicílio</strong> em Marechal Deodoro e regiões próximas.</p>
+                                <p class="text-blue-100 text-sm mt-1.5 leading-relaxed">Nosso veículo busca você em Marechal e leva para Maceió. Preferiu não sair de casa? <strong>Nós levamos nosso mostruário até o seu domicílio</strong>, inclusive com horários flexíveis fora do comercial!</p>
                             </div>
                         </div>
 
@@ -383,8 +386,9 @@
                 <div class="lg:col-span-6">
                     <span class="text-brand-vibrant font-extrabold text-sm uppercase tracking-wider">Tradição & Confiança</span>
                     <h2 class="text-3xl sm:text-4xl font-black text-brand-blue mt-2 mb-6">Sobre a Ótica Cristalino</h2>
+                    
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        A <strong>Ótica Cristalino</strong> é sinônimo de <strong>eficiência e qualidade</strong> no coração de Marechal Deodoro. Nosso objetivo é proporcionar um atendimento humanizado, completo e transparente para toda a sua família.
+                        Com uma sólida trajetória de confiança construída <strong>desde 2012</strong>, a <strong>Ótica Cristalino</strong> é sinônimo de eficiência, tradição e qualidade no coração de Marechal Deodoro. Nosso objetivo é proporcionar um atendimento humanizado, completo e transparente para toda a sua família.
                     </p>
                     <p class="text-gray-600 mb-6 leading-relaxed">
                         Entendemos que cuidar da saúde dos seus olhos precisa ser prático e acessível. Por isso, oferecemos desde a facilidade do transporte até a consulta em Maceió, atendimento domiciliar em Marechal, e a entrega de armações, relógios e alianças de alto padrão.
@@ -474,9 +478,22 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-brand-blue text-lg">Endereço da Loja</h4>
-                                <p class="text-gray-600 text-sm">Rua Barão de Alagoas, nº 24 - Centro<br>Marechal Deodoro - AL | Vizinho ao Boticário</p>
+                                <p class="text-gray-600 text-sm">Rua Barão de Alagoas, nº 24 - Centro<br>Marechal Deodoro - AL | Ao lado do Boticário</p>
                             </div>
                         </div>
+
+                        <!-- CARD NOVO: HORÁRIO DE FUNCIONAMENTO (COM DESTAQUE FLEXÍVEL) -->
+                        <div class="flex items-center gap-5 p-5 rounded-2xl bg-white border border-gray-100 shadow-sm">
+                            <div class="w-14 h-14 bg-brand-vibrant/10 text-brand-vibrant rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-blue text-lg">Horário de Funcionamento</h4>
+                                <p class="text-gray-600 text-sm font-medium mb-1">Segunda a Sexta: 08:30 às 17:00<br>Sábado: 08:30 às 12:00</p>
+                                <p class="text-xs text-brand-vibrant font-bold">*Atendimento em domicílio com horários flexíveis!</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -488,12 +505,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8 pb-8 border-b border-white/10">
                 <div class="flex items-center gap-3">
-                    <img src="assets/Logo Ótica Cristalino em Azul Vibrante com fundo transparente.png" alt="Logo Ótica Cristalino" class="h-28 md:h-36 w-auto object-contain">
+                    <img src="assets/Logo Óptica Cristalinos em Azul Vibrante com fundo transparente.png" alt="Logo Ótica Cristalino" class="h-28 md:h-36 w-auto object-contain">
                 </div>
                 
                 <div class="text-center md:text-right">
                     <p class="text-lg font-bold text-brand-gold mb-1">Ótica Cristalino</p>
-                    <p class="text-sm text-blue-200">Eficiência e Qualidade ao seu Alcance</p>
+                    <p class="text-sm text-blue-200">Desde 2012 entregando eficiência e qualidade.</p>
                 </div>
             </div>
 
@@ -529,17 +546,18 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-gray-700 mb-1">Data e Hora Preferencial</label>
-                    <input type="datetime-local" id="modal-datetime" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-vibrant text-sm bg-white">
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Qual facilidade você prefere?</label>
+                    <select id="modal-service-type" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-vibrant text-sm bg-white mb-4">
+                        <option value="Exame com Transporte Grátis para Maceió">Exame com Transporte Grátis p/ Maceió</option>
+                        <option value="Atendimento em Domicílio">Atendimento em Domicílio (Horário Flexível)</option>
+                        <option value="Irei visitar a loja física">Irei visitar a loja física</option>
+                    </select>
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-gray-700 mb-1">Qual facilidade você prefere?</label>
-                    <select id="modal-service-type" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-vibrant text-sm bg-white">
-                        <option value="Exame com Transporte Grátis para Maceió">Exame com Transporte Grátis p/ Maceió</option>
-                        <option value="Atendimento em Domicílio">Atendimento em Domicílio</option>
-                        <option value="Irei visitar a loja física">Irei visitar a loja física</option>
-                    </select>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Data e Hora Preferencial</label>
+                    <input type="datetime-local" id="modal-datetime" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-vibrant text-sm bg-white">
+                    <p class="text-[10px] text-gray-400 mt-1">*Loja física: Seg-Sex 08:30 às 17:00, Sáb 08:30 às 12:00. <strong>Domicílio: Qualquer horário!</strong></p>
                 </div>
 
                 <button type="submit" class="w-full bg-green-500 text-white font-black py-4 rounded-xl hover:bg-green-600 transition-colors shadow-lg flex items-center justify-center gap-2 mt-6">
@@ -566,8 +584,19 @@
             });
         });
 
+        // Configuração Inicial do Campo Data (Impedir dias passados)
+        const datetimeInput = document.getElementById('modal-datetime');
+        
+        function setMinDateTime() {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            datetimeInput.min = now.toISOString().slice(0, 16);
+        }
+        setMinDateTime();
+
         // Controle do Modal de Agendamento
         function openAppointmentModal() {
+            setMinDateTime(); // Atualiza o "min" sempre que o modal for aberto
             document.getElementById('appointment-modal').classList.remove('hidden');
         }
 
@@ -586,19 +615,80 @@
             return `${day}/${month}/${year} às ${hours}:${minutes}`;
         }
 
-        // Envio do formulário do modal dinamicamente para o WhatsApp
+        // Envio do formulário do modal dinamicamente para o WhatsApp + Validação Inteligente com SweetAlert2
         function sendBookingWhatsApp(event) {
             event.preventDefault();
-            const name = document.getElementById('modal-name').value;
-            const datetimeInput = document.getElementById('modal-datetime').value;
-            const formattedDateTime = formatDateTime(datetimeInput);
+            
+            const datetimeInputVal = document.getElementById('modal-datetime').value;
             const serviceType = document.getElementById('modal-service-type').value;
+
+            // VALIDAÇÃO INTELIGENTE DE HORÁRIOS
+            // Se NÃO for atendimento em domicílio, aplica a regra estrita da loja física.
+            if (serviceType !== "Atendimento em Domicílio") {
+                const selectedDate = new Date(datetimeInputVal);
+                const dayOfWeek = selectedDate.getDay(); 
+                const hours = selectedDate.getHours();
+                const minutes = selectedDate.getMinutes();
+                const timeInMinutes = hours * 60 + minutes;
+                const openTime = 8 * 60 + 30; // 08:30 (510 minutos)
+
+                // Bloqueia Domingo com SweetAlert2
+                if (dayOfWeek === 0) {
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Loja Fechada aos Domingos',
+                        html: 'A loja física e o transporte não funcionam aos domingos.<br><br>Para agendar neste dia, mude a opção para <b>Atendimento em Domicílio (Horário Flexível)</b>.',
+                        confirmButtonColor: '#0aa6e8', // Cor brand-vibrant
+                        confirmButtonText: 'Entendi'
+                    });
+                    return; // Interrompe o envio
+                }
+
+                // Define o horário de fechamento
+                const closeTime = (dayOfWeek === 6) ? (12 * 60) : (17 * 60);
+
+                // Bloqueia fora do expediente com SweetAlert2
+                if (timeInMinutes < openTime || timeInMinutes > closeTime) {
+                    const message = dayOfWeek === 6 
+                        ? "Aos sábados, a loja funciona das 08:30 às 12:00.<br><br>Para horários alternativos, selecione a opção <b>Atendimento em Domicílio (Horário Flexível)</b>." 
+                        : "De segunda a sexta, a loja funciona das 08:30 às 17:00.<br><br>Para horários alternativos, selecione a opção <b>Atendimento em Domicílio (Horário Flexível)</b>.";
+                    
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Fora do Horário Comercial',
+                        html: message,
+                        confirmButtonColor: '#0aa6e8', // Cor brand-vibrant
+                        confirmButtonText: 'Entendi'
+                    });
+                    return; // Interrompe o envio
+                }
+            }
+
+            // Se passou na validação, coleta os outros dados e envia pro WhatsApp
+            const name = document.getElementById('modal-name').value;
+            const formattedDateTime = formatDateTime(datetimeInputVal);
 
             const message = `Olá! Gostaria de agendar um atendimento com a Ótica Cristalino.%0A%0A*Nome:* ${encodeURIComponent(name)}%0A*Data e Hora:* ${encodeURIComponent(formattedDateTime)}%0A*Tipo de Atendimento:* ${encodeURIComponent(serviceType)}`;
             
             window.open(`https://wa.me/5582999033333?text=${message}`, '_blank');
             closeAppointmentModal();
         }
+    </script>
+
+    <!-- VLIBRAS WIDGET (acessibilidade Libras) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget({
+            rootPath: 'https://vlibras.gov.br/app',
+            position: 'R',
+            avatar: 'random'
+        });
     </script>
 </body>
 </html>
