@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ótica Cristalino - Eficiência e Qualidade em Marechal Deodoro</title>
+    <meta name="description" content="Óculos de grau e sol das melhores marcas, alianças em ouro e prata, relógios de grife e transporte gratuito para exame de vista em Maceió.">
+    
+    <!-- FAVICON (Ícone da aba do navegador) -->
+    <link rel="icon" href="assets/Logo Ótica Cristalino em Azul Vibrante.png" type="image/png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Font Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#004B8D',
+                            vibrant: '#0aa6e8',
+                            gold: '#FFC700',
+                            light: '#F8FAFC',
+                            dark: '#0F172A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(0,75,141,0.95) 0%, rgba(10,166,232,0.85) 100%);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-brand-light antialiased selection:bg-brand-gold selection:text-brand-blue">
+
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="fixed w-full bg-brand-vibrant/95 backdrop-blur-md shadow-lg z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                
+                <!-- LOGO -->
+                <div class="flex-shrink-0 flex items-center py-2">
+                    <a href="#" class="flex items-center gap-2 group">
+                        <img src="assets/Logo Ótica Cristalino em Azul Vibrante com fundo transparente.png" alt="Logo Ótica Cristalino" class="h-20 w-auto object-contain transition-transform group-hover:scale-105">
+                    </a>
+                </div>
+
+                <!-- MENU DESKTOP -->
+                <nav class="hidden lg:flex space-x-8 items-center">
+                    <a href="#sobre" class="text-white hover:text-brand-gold font-medium transition-colors">Sobre Nós</a>
+                    <a href="#exame-transporte" class="text-white hover:text-brand-gold font-medium transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-car-side text-brand-gold"></i> Exame & Transporte
+                    </a>
+                    <a href="#produtos" class="text-white hover:text-brand-gold font-medium transition-colors">Catálogo</a>
+                    <a href="#vantagens" class="text-brand-gold font-bold hover:text-yellow-300 transition-colors">Vantagens</a>
+                    <a href="#contato" class="text-white hover:text-brand-gold font-medium transition-colors">Localização</a>
+                </nav>
+
+                <!-- BOTÃO WHATSAPP DIRETO -->
+                <div class="hidden md:flex items-center gap-3">
+                    <button onclick="openAppointmentModal()" class="bg-brand-gold text-brand-blue px-5 py-2.5 rounded-full font-bold hover:bg-yellow-400 transition-all shadow-md flex items-center gap-2 text-sm">
+                        <i class="fa-solid fa-calendar-check"></i> Agendar Atendimento
+                    </button>
+                    <a href="https://wa.me/5582999033333?text=Olá!%20Vim%20pelo%20site%20da%20Ótica%20Cristalino%20e%20gostaria%20de%20tirar%20uma%20dúvida." target="_blank" class="bg-green-500 text-white px-5 py-2.5 rounded-full font-bold hover:bg-green-600 transition-all shadow-md flex items-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                    </a>
+                </div>
+
+                <!-- BOTÃO MENU MOBILE -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-gold focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MENU MOBILE -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-blue border-t border-blue-800">
+            <a href="#sobre" class="block px-6 py-3.5 text-white font-medium border-b border-blue-800">Sobre Nós</a>
+            <a href="#exame-transporte" class="block px-6 py-3.5 text-brand-gold font-bold border-b border-blue-800"><i class="fa-solid fa-car-side mr-2"></i>Exame & Transporte Grátis</a>
+            <a href="#produtos" class="block px-6 py-3.5 text-white font-medium border-b border-blue-800">Catálogo de Produtos</a>
+            <a href="#vantagens" class="block px-6 py-3.5 text-white font-medium border-b border-blue-800">Vantagens & Pagamento</a>
+            <a href="#contato" class="block px-6 py-3.5 text-white font-medium border-b border-blue-800">Localização e Contato</a>
+            <div class="p-4 flex flex-col gap-3">
+                <button onclick="openAppointmentModal()" class="w-full bg-brand-gold text-brand-blue py-3 rounded-xl font-bold flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-calendar-check"></i> Agendar Exame / Visita
+                </button>
+                <a href="https://wa.me/5582999033333?text=Olá!%20Gostaria%20de%20falar%20com%20a%20Ótica%20Cristalino." target="_blank" class="w-full bg-green-500 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Falar no WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="pt-36 pb-20 md:pt-44 md:pb-28 bg-brand-blue text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#0aa6e8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-7/12 text-center lg:text-left">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-brand-gold text-sm font-semibold mb-6 border border-white/10">
+                    <i class="fa-solid fa-star"></i> Eficiência & Qualidade em Marechal Deodoro
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 tracking-tight">
+                    Sua visão perfeita com <span class="text-brand-gold underline decoration-brand-vibrant decoration-4 underline-offset-8">transporte e exame grátis</span>.
+                </h1>
+                <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl leading-relaxed">
+                    Comprando seus óculos na Ótica Cristalino, nós levamos você confortavelmente até o oftalmologista em Maceió ou <strong>vamos até a sua casa em Marechal Deodoro e regiões próximas</strong>!
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <button onclick="openAppointmentModal()" class="bg-brand-gold text-brand-blue px-8 py-4 rounded-full font-extrabold text-lg hover:bg-yellow-400 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-calendar-check"></i> Agendar Atendimento Grátis
+                    </button>
+                    <a href="#produtos" class="border-2 border-white/80 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-brand-blue transition-all flex items-center justify-center gap-2">
+                        Ver Coleção
+                    </a>
+                </div>
+
+                <!-- MINI BADGES ATUALIZADOS -->
+                <div class="mt-10 pt-8 border-t border-white/10 grid grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-circle-check text-brand-gold text-xl"></i>
+                        <span class="text-sm font-medium text-blue-100">Exame Grátis</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-car text-brand-gold text-xl"></i>
+                        <span class="text-sm font-medium text-blue-100">Transporte</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-house-medical text-brand-gold text-xl"></i>
+                        <span class="text-sm font-medium text-blue-100">Atendimento em Domicílio</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-calendar-days text-brand-gold text-xl"></i>
+                        <span class="text-sm font-medium text-blue-100">Segunda a Sábado</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lg:w-5/12 w-full">
+                <div class="relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-brand-vibrant rounded-3xl blur opacity-30"></div>
+                    <div class="relative bg-white/10 p-3 rounded-3xl backdrop-blur-md border border-white/20 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Atendimento Ótica Cristalino" class="rounded-2xl w-full h-auto object-cover aspect-[4/3]">
+                        <div class="absolute bottom-6 left-6 right-6 bg-brand-dark/90 backdrop-blur-md p-4 rounded-xl border border-white/10 text-white">
+                            <p class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-1"><i class="fa-solid fa-award"></i> Marcas Consagradas</p>
+                            <p class="text-sm font-medium">Ray-Ban, Ana Hickmann, Sabrina Sato, Speedo, Technos e Mondaine.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO EXCLUSIVA DE TRANSPORTE E EXAME GRATUITO REFATORADA -->
+    <section id="exame-transporte" class="py-20 bg-gradient-to-b from-white to-blue-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-blue rounded-3xl text-white p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <!-- Efeitos de Fundo -->
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-vibrant/20 rounded-full blur-3xl"></div>
+                <div class="absolute -left-20 -top-20 w-80 h-80 bg-brand-vibrant/20 rounded-full blur-3xl"></div>
+                
+                <!-- TÍTULO E TEXTO CENTRALIZADOS NO TOPO -->
+                <div class="relative z-10 text-center max-w-4xl mx-auto mb-14 flex flex-col items-center">
+                    <span class="bg-brand-gold text-brand-blue px-5 py-2 rounded-full font-black text-xs uppercase tracking-wider mb-5 inline-block">
+                        Comodidade Exclusiva Cristalino
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black mb-6 leading-tight">
+                        Você não precisa se preocupar com a viagem até o médico!
+                    </h2>
+                    <p class="text-blue-100 text-lg leading-relaxed max-w-3xl">
+                        A Ótica Cristalino cuida de tudo para você. Ao comprar sua armação, o seu <strong>exame de vista é 100% gratuito</strong> com um médico oftalmologista parceiro em Maceió, utilizando laboratório totalmente computadorizado de alta precisão.
+                    </p>
+                </div>
+
+                <!-- GRID SIMÉTRICO: PASSOS x CARD -->
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch max-w-6xl mx-auto">
+                    
+                    <!-- COLUNA ESQUERDA: PASSO A PASSO -->
+                    <div class="flex flex-col justify-between space-y-5">
+                        <div class="flex items-start gap-5 bg-white/10 p-6 rounded-2xl border border-white/10 flex-grow shadow-sm">
+                            <div class="bg-brand-gold text-brand-blue w-12 h-12 rounded-xl font-black flex items-center justify-center flex-shrink-0 text-xl">1</div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Agendamento Fácil</h4>
+                                <p class="text-blue-100 text-sm mt-1.5 leading-relaxed">Agende diretamente na loja ou pelo WhatsApp. O médico atende de <strong>Segunda a Sábado</strong>.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-5 bg-white/10 p-6 rounded-2xl border border-white/10 flex-grow shadow-sm">
+                            <div class="bg-brand-gold text-brand-blue w-12 h-12 rounded-xl font-black flex items-center justify-center flex-shrink-0 text-xl">2</div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Transporte Ida/Volta ou Domicílio</h4>
+                                <p class="text-blue-100 text-sm mt-1.5 leading-relaxed">Nosso veículo busca você em Marechal e leva para Maceió. Preferiu não sair de casa? <strong>Nós levamos nosso mostruário até o seu domicílio</strong> em Marechal Deodoro e regiões próximas.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-5 bg-white/10 p-6 rounded-2xl border border-white/10 flex-grow shadow-sm">
+                            <div class="bg-brand-gold text-brand-blue w-12 h-12 rounded-xl font-black flex items-center justify-center flex-shrink-0 text-xl">3</div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Laboratório Computadorizado</h4>
+                                <p class="text-blue-100 text-sm mt-1.5 leading-relaxed">Sua receita é processada em equipamentos de ponta para garantir lentes com grau exato e máximo conforto visual.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COLUNA DIREITA: CARD DE ATENDIMENTO -->
+                    <div class="flex flex-col items-center justify-center text-center bg-white/5 p-8 sm:p-10 rounded-2xl border border-white/10 backdrop-blur-md h-full shadow-lg">
+                        <div class="w-24 h-24 bg-brand-gold/20 text-brand-gold rounded-full flex items-center justify-center text-5xl mb-6 shadow-inner">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-3">Atendimento Especializado</h3>
+                        <p class="text-blue-100 text-base mb-8 max-w-sm">Consultas com médica oftalmologista altamente qualificada e equipamentos digitais modernos.</p>
+                        
+                        <div class="w-full bg-brand-vibrant/30 p-5 rounded-xl border border-brand-vibrant/40 mb-8 shadow-sm">
+                            <p class="text-brand-gold font-bold text-sm uppercase tracking-wider mb-1"><i class="fa-solid fa-clock mr-1"></i> Dias de Atendimento</p>
+                            <p class="text-white text-base font-medium">Segunda a Sábado (sob agendamento prévio)</p>
+                        </div>
+                        
+                        <a href="https://wa.me/5582999033333?text=Olá!%20Gostaria%20de%20saber%20os%20horários%20disponíveis%20para%20o%20exame%20de%20vista." target="_blank" class="text-white hover:text-brand-gold font-bold text-sm underline flex items-center gap-2 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Consultar Horários Disponíveis
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BOTÃO CENTRALIZADO NO FUNDO -->
+                <div class="relative z-10 mt-12 flex justify-center">
+                    <button onclick="openAppointmentModal()" class="w-full sm:w-auto bg-brand-gold text-brand-blue px-10 py-5 rounded-2xl font-black text-lg hover:bg-yellow-400 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-calendar-check text-xl"></i> Quero Agendar Meu Atendimento
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATÁLOGO COMPLETO DE PRODUTOS -->
+    <section id="produtos" class="py-20 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-vibrant font-extrabold text-sm uppercase tracking-wider">Variedade & Sofisticação</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-brand-blue mt-2 mb-4">Nosso Catálogo Especializado</h2>
+                <div class="w-20 h-1.5 bg-brand-gold mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 text-lg">Trabalhamos exclusivamente com marcas consagradas no mercado óptico, relojoaria e joalharia de alta pureza.</p>
+            </div>
+
+            <!-- GRID DE CATEGORIAS DE PRODUTOS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- CATEGORIA 1: ARMAÇÕES DE GRIFE -->
+                <div class="bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col group border border-gray-100">
+                    <div class="h-56 overflow-hidden relative bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Óculos de Grau e Sol" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Óptica</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Óculos Grau & Sol</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4 flex-grow">
+                            Armações masculinas, femininas e infantis de marcas renomadas como <strong>Ray-Ban</strong>, <strong>Ana Hickmann</strong>, <strong>Sabrina Sato</strong>, <strong>Cristal</strong> e <strong>Infinito</strong>.
+                        </p>
+                        <div class="pt-4 border-t border-gray-100">
+                            <a href="https://wa.me/5582999033333?text=Olá!%20Gostaria%20de%20ver%20modelos%20de%20armações%20e%20óculos%20de%20sol." target="_blank" class="w-full bg-brand-vibrant/10 text-brand-blue hover:bg-brand-vibrant hover:text-white py-2.5 rounded-xl font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp"></i> Ver Armações
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORIA 2: RELÓGIOS -->
+                <div class="bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col group border border-gray-100">
+                    <div class="h-56 overflow-hidden relative bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Relógios Technos, Speedo e Mondaine" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-gold text-brand-blue text-xs font-bold px-3 py-1 rounded-full shadow-md">Relojoaria</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Relógios Originais</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4 flex-grow">
+                            Linha completa <strong>Esportiva e Social</strong> das marcas oficiais: <strong>Technos, Speedo e Mondaine</strong> com garantia de fábrica.
+                        </p>
+                        <div class="pt-4 border-t border-gray-100">
+                            <a href="https://wa.me/5582999033333?text=Olá!%20Gostaria%20de%20receber%20fotos%20dos%20relógios%20Technos,%20Speedo%20e%20Mondaine." target="_blank" class="w-full bg-brand-vibrant/10 text-brand-blue hover:bg-brand-vibrant hover:text-white py-2.5 rounded-xl font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp"></i> Ver Relógios
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORIA 3: JÓIAS E ALIANÇAS -->
+                <div class="bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col group border border-gray-100">
+                    <div class="h-56 overflow-hidden relative bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Alianças em Ouro e Prata" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Joalharia</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Alianças de Legítima Pureza</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4 flex-grow">
+                            Especialistas em alianças para noivado e casamento em <strong>Ouro 18k, Ouro 16k e Prata 925</strong> com certificado e acabamento refinado.
+                        </p>
+                        <div class="pt-4 border-t border-gray-100">
+                            <a href="https://wa.me/5582999033333?text=Olá!%20Gostaria%20de%20orçamento%20para%20alianças%20em%20ouro%20ou%20prata." target="_blank" class="w-full bg-brand-vibrant/10 text-brand-blue hover:bg-brand-vibrant hover:text-white py-2.5 rounded-xl font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp"></i> Cotar Alianças
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORIA 4: LENTES DE CONTATO -->
+                <div class="bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col group border border-gray-100">
+                    <div class="h-56 overflow-hidden relative bg-gray-100">
+                        <img src="https://media.istockphoto.com/id/1903741703/pt/foto/contact-lenses-in-case-with-solution-liquid-on-light-blue-background.jpg?s=612x612&w=0&k=20&c=UmrtoZVMA-gXZEhXQ3FrqB09qzd1bncEhIDYLva78xc=" alt="Lentes de Contato" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Contatologia</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Lentes de Contato</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4 flex-grow">
+                            Vendemos lentes de contato <strong>com grau (miopia, astigmatismo)</strong> e <strong>estéticas (coloridas)</strong> das marcas mais seguras do mercado.
+                        </p>
+                        <div class="pt-4 border-t border-gray-100">
+                            <a href="https://wa.me/5582999033333?text=Olá!%20Gostaria%20de%20informações%20sobre%20lentes%20de%20contato." target="_blank" class="w-full bg-brand-vibrant/10 text-brand-blue hover:bg-brand-vibrant hover:text-white py-2.5 rounded-xl font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp"></i> Lentes de Contato
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTAQUE VANTAGENS E CONDICIONAL DE PAGAMENTO -->
+    <section id="vantagens" class="py-16 bg-brand-gold relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
+                <div class="text-center lg:text-left">
+                    <span class="bg-brand-blue text-white px-4 py-1 rounded-full font-extrabold text-xs uppercase tracking-wider mb-3 inline-block">Condições Imperdíveis</span>
+                    <h3 class="text-3xl sm:text-4xl font-black text-brand-blue mb-4">Economia de Verdade no Seu Bolso!</h3>
+                    <p class="text-brand-blue/90 font-medium text-base sm:text-lg max-w-xl">
+                        Além do exame e transporte grátis na compra de óculos, oferecemos <strong>descontos exclusivos para pagamentos à vista</strong> em todo nosso catálogo!
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                    <div class="bg-brand-blue text-white p-6 rounded-2xl shadow-xl flex items-center gap-4 border border-brand-blue/20">
+                        <div class="text-3xl text-brand-gold"><i class="fa-solid fa-percent"></i></div>
+                        <div>
+                            <p class="font-bold text-base">Desconto À Vista</p>
+                            <p class="text-xs text-blue-200">Melhores preços garantidos em Marechal</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-blue text-white p-6 rounded-2xl shadow-xl flex items-center gap-4 border border-brand-blue/20">
+                        <div class="text-3xl text-green-400"><i class="fa-solid fa-credit-card"></i></div>
+                        <div>
+                            <p class="font-bold text-base">Facilidade no Cartão</p>
+                            <p class="text-xs text-blue-200">Parcelamos suas compras com facilidade</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE A ÓTICA -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fachada e Interior Ótica Cristalino" class="rounded-3xl shadow-2xl w-full object-cover">
+                        <div class="absolute -bottom-6 -right-6 bg-brand-vibrant text-white p-6 rounded-3xl shadow-xl hidden sm:block">
+                            <p class="text-3xl font-black">100%</p>
+                            <p class="text-xs font-semibold">Compromisso com sua Visão</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <span class="text-brand-vibrant font-extrabold text-sm uppercase tracking-wider">Tradição & Confiança</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-brand-blue mt-2 mb-6">Sobre a Ótica Cristalino</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        A <strong>Ótica Cristalino</strong> é sinônimo de <strong>eficiência e qualidade</strong> no coração de Marechal Deodoro. Nosso objetivo é proporcionar um atendimento humanizado, completo e transparente para toda a sua família.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Entendemos que cuidar da saúde dos seus olhos precisa ser prático e acessível. Por isso, oferecemos desde a facilidade do transporte até a consulta em Maceió, atendimento domiciliar em Marechal, e a entrega de armações, relógios e alianças de alto padrão.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-vibrant text-xl"></i>
+                            <span class="text-sm font-bold text-gray-700">Atendimento Familiar</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-vibrant text-xl"></i>
+                            <span class="text-sm font-bold text-gray-700">Marcas Originais</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-vibrant text-xl"></i>
+                            <span class="text-sm font-bold text-gray-700">Atendimento em Domicílio</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-vibrant text-xl"></i>
+                            <span class="text-sm font-bold text-gray-700">Garantia Comprovada</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO E CONTATO -->
+    <section id="contato" class="py-20 bg-brand-light border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- MAPA -->
+                <div class="lg:col-span-6">
+                    <span class="text-brand-vibrant font-extrabold text-sm uppercase tracking-wider">Venha nos Fazer uma Visita</span>
+                    <h2 class="text-3xl font-black text-brand-blue mt-2 mb-6">Nossa Localização</h2>
+                    <p class="text-gray-600 mb-6">Estamos localizados no centro histórico e comercial de Marechal Deodoro. Passe na loja para tomar uma água, conhecer nossa coleção, ou <strong>solicite um atendimento no seu domicílio</strong>!</p>
+                    
+                    <div class="w-full h-96 bg-gray-200 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d983.1450827420305!2d-35.89418169722792!3d-9.716812568502554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7015321d0478211%3A0x9eb2a685c72ad320!2s%C3%93tica%20Cristalino!5e0!3m2!1spt-BR!2sbr!4v1791338630937!5m2!1spt-BR!2sbr" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- CARDS DE CONTATO -->
+                <div class="lg:col-span-6 flex flex-col justify-center">
+                    <span class="text-brand-vibrant font-extrabold text-sm uppercase tracking-wider">Atendimento Rápido</span>
+                    <h2 class="text-3xl font-black text-brand-blue mt-2 mb-8">Canais de Contato</h2>
+                    
+                    <div class="space-y-4">
+                        <!-- WHATSAPP -->
+                        <a href="https://wa.me/5582999033333?text=Olá!%20Gostaria%20de%20falar%20com%20atendimento%20da%20Ótica%20Cristalino." target="_blank" class="flex items-center gap-5 p-5 rounded-2xl bg-white hover:bg-green-50 transition-all border border-gray-100 shadow-sm hover:shadow-md group">
+                            <div class="w-14 h-14 bg-green-500 text-white rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 group-hover:scale-105 transition-transform">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-blue text-lg">WhatsApp Oficial</h4>
+                                <p class="text-gray-600 font-medium">(82) 99903-3333</p>
+                                <span class="text-xs text-green-600 font-bold">Clique para iniciar conversa &rarr;</span>
+                            </div>
+                        </a>
+
+                        <!-- INSTAGRAM -->
+                        <a href="https://instagram.com/cristalino.otica" target="_blank" class="flex items-center gap-5 p-5 rounded-2xl bg-white hover:bg-pink-50 transition-all border border-gray-100 shadow-sm hover:shadow-md group">
+                            <div class="w-14 h-14 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 text-white rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 group-hover:scale-105 transition-transform">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-blue text-lg">Instagram</h4>
+                                <p class="text-gray-600 font-medium">@cristalino.otica</p>
+                                <span class="text-xs text-pink-600 font-bold">Siga novidades e fotos reais &rarr;</span>
+                            </div>
+                        </a>
+
+                        <!-- ENDEREÇO -->
+                        <div class="flex items-center gap-5 p-5 rounded-2xl bg-white border border-gray-100 shadow-sm">
+                            <div class="w-14 h-14 bg-brand-blue text-brand-gold rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-blue text-lg">Endereço da Loja</h4>
+                                <p class="text-gray-600 text-sm">Rua Barão de Alagoas, nº 24 - Centro<br>Marechal Deodoro - AL | Vizinho ao Boticário</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-brand-blue text-white py-12 border-t-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 pb-8 border-b border-white/10">
+                <div class="flex items-center gap-3">
+                    <img src="assets/Logo Ótica Cristalino em Azul Vibrante com fundo transparente.png" alt="Logo Ótica Cristalino" class="h-28 md:h-36 w-auto object-contain">
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-lg font-bold text-brand-gold mb-1">Ótica Cristalino</p>
+                    <p class="text-sm text-blue-200">Eficiência e Qualidade ao seu Alcance</p>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-blue-200">
+                <p>&copy; 2026 Ótica Cristalino. Todos os direitos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="https://wa.me/5582999033333" target="_blank" class="hover:text-brand-gold transition-colors text-lg"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/cristalino.otica" target="_blank" class="hover:text-brand-gold transition-colors text-lg"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE AGENDAMENTO INTERATIVO -->
+    <div id="appointment-modal" class="fixed inset-0 bg-brand-dark/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl relative animate-fade-in">
+            <button onclick="closeAppointmentModal()" class="absolute top-6 right-6 text-gray-400 hover:text-gray-600 text-2xl font-bold">
+                &times;
+            </button>
+            
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-brand-gold/20 text-brand-blue rounded-full flex items-center justify-center text-3xl mx-auto mb-3">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                </div>
+                <h3 class="text-2xl font-black text-brand-blue">Agendar Atendimento</h3>
+                <p class="text-gray-500 text-xs mt-1">Preencha abaixo para enviar seu agendamento direto ao nosso WhatsApp.</p>
+            </div>
+
+            <form id="booking-form" onsubmit="sendBookingWhatsApp(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Seu Nome Completo</label>
+                    <input type="text" id="modal-name" required placeholder="Ex: Maria da Silva" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-vibrant text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Data e Hora Preferencial</label>
+                    <input type="datetime-local" id="modal-datetime" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-vibrant text-sm bg-white">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Qual facilidade você prefere?</label>
+                    <select id="modal-service-type" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-vibrant text-sm bg-white">
+                        <option value="Exame com Transporte Grátis para Maceió">Exame com Transporte Grátis p/ Maceió</option>
+                        <option value="Atendimento em Domicílio">Atendimento em Domicílio</option>
+                        <option value="Irei visitar a loja física">Irei visitar a loja física</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full bg-green-500 text-white font-black py-4 rounded-xl hover:bg-green-600 transition-colors shadow-lg flex items-center justify-center gap-2 mt-6">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Enviar Agendamento no WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SCRIPTS INTERATIVOS -->
+    <script>
+        // Menu Mobile Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Controle do Modal de Agendamento
+        function openAppointmentModal() {
+            document.getElementById('appointment-modal').classList.remove('hidden');
+        }
+
+        function closeAppointmentModal() {
+            document.getElementById('appointment-modal').classList.add('hidden');
+        }
+
+        // Formatação da data para o WhatsApp
+        function formatDateTime(datetimeStr) {
+            const dateObj = new Date(datetimeStr);
+            const day = String(dateObj.getDate()).padStart(2, '0');
+            const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+            const year = dateObj.getFullYear();
+            const hours = String(dateObj.getHours()).padStart(2, '0');
+            const minutes = String(dateObj.getMinutes()).padStart(2, '0');
+            return `${day}/${month}/${year} às ${hours}:${minutes}`;
+        }
+
+        // Envio do formulário do modal dinamicamente para o WhatsApp
+        function sendBookingWhatsApp(event) {
+            event.preventDefault();
+            const name = document.getElementById('modal-name').value;
+            const datetimeInput = document.getElementById('modal-datetime').value;
+            const formattedDateTime = formatDateTime(datetimeInput);
+            const serviceType = document.getElementById('modal-service-type').value;
+
+            const message = `Olá! Gostaria de agendar um atendimento com a Ótica Cristalino.%0A%0A*Nome:* ${encodeURIComponent(name)}%0A*Data e Hora:* ${encodeURIComponent(formattedDateTime)}%0A*Tipo de Atendimento:* ${encodeURIComponent(serviceType)}`;
+            
+            window.open(`https://wa.me/5582999033333?text=${message}`, '_blank');
+            closeAppointmentModal();
+        }
+    </script>
+</body>
+</html>
